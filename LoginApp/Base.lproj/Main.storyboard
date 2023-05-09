@@ -80,8 +80,41 @@
                     <view key="view" contentMode="scaleToFill" id="oE4-ym-FAj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="abd-AG-yH1">
+                                <rect key="frame" x="105.66666666666667" y="229" width="181.66666666666663" height="131"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENh-LT-TMU">
+                                        <rect key="frame" x="0.0" y="0.0" width="181.66666666666666" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lz-5K-z4s">
+                                        <rect key="frame" x="63.333333333333329" y="70" width="55" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE2-3m-VvN">
+                                <rect key="frame" x="158" y="679" width="77" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GnF-FU-lQd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CE2-3m-VvN" firstAttribute="centerX" secondItem="oE4-ym-FAj" secondAttribute="centerX" id="Gb3-lq-0ki"/>
+                            <constraint firstItem="abd-AG-yH1" firstAttribute="top" secondItem="GnF-FU-lQd" secondAttribute="top" constant="170" id="SNF-Sr-rgQ"/>
+                            <constraint firstItem="abd-AG-yH1" firstAttribute="centerX" secondItem="oE4-ym-FAj" secondAttribute="centerX" id="b45-Q3-Mj7"/>
+                            <constraint firstItem="GnF-FU-lQd" firstAttribute="bottom" secondItem="CE2-3m-VvN" secondAttribute="bottom" constant="100" id="iDW-Kt-cKi"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcY-Sd-zoy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
