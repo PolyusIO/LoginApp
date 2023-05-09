@@ -16,12 +16,6 @@ class LoginViewController: UIViewController {
     // MARK: - Private Properties
     private let user = "user"
     private let password = "pass"
-    
-    // MARK: - Override Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 
     // MARK: - IB Actions
     @IBAction func logInButtonPressed() {
