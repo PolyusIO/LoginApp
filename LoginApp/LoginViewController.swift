@@ -18,6 +18,14 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func logInButtonPressed() {
+        if passwordTextField.text != "pass" {
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password"
+            )
+            passwordTextField.text = ""
+            return
+        }
     }
     
     @IBAction func forgotUserNameButtonPressed() {
@@ -27,8 +35,6 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPasswordButtonPressed() {
         showAlert(title: "Oops!", message: "Your password is pass 😉")
     }
-    
-
     
 
 }
@@ -44,7 +50,6 @@ extension LoginViewController {
         passwordTextField.text = ""
     }
 }
-
 
 
 // MARK: - UIAlertController
@@ -64,3 +69,10 @@ extension LoginViewController {
     }
 }
 
+
+// MARK: - Keyboard
+extension LoginViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+    }
+}
