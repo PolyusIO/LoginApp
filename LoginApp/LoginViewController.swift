@@ -9,11 +9,17 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 
+    @IBAction func logInButtonPressed() {
+    }
+    
     @IBAction func forgotUserNameButtonPressed() {
         showAlert(title: "Oops!", message: "Your name is user 😉")
     }
@@ -22,9 +28,24 @@ class LoginViewController: UIViewController {
         showAlert(title: "Oops!", message: "Your password is pass 😉")
     }
     
+
     
 
 }
+// MARK: - Navigation
+extension LoginViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.name = userNameTextField.text
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    }
+}
+
+
 
 // MARK: - UIAlertController
 extension LoginViewController {
