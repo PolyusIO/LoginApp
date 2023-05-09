@@ -9,14 +9,17 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    // MARK: - IB Outlets
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 
+    // MARK: - IB Actions
     @IBAction func logInButtonPressed() {
         if passwordTextField.text != "pass" || userNameTextField.text != "user" {
             showAlert(
@@ -35,9 +38,9 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPasswordButtonPressed() {
         showAlert(title: "Oops!", message: "Your password is pass 😉")
     }
-    
-
 }
+
+
 // MARK: - Navigation
 extension LoginViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,7 +55,7 @@ extension LoginViewController {
 }
 
 
-// MARK: - UIAlertController
+// MARK: - Alert Controller
 extension LoginViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(

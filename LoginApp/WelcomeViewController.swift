@@ -9,16 +9,20 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    // MARK: - IB Outlets
     @IBOutlet var welcomeLabel: UILabel!
     
+    // MARK: - Public Properties
     var name: String!
     
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         gradient()
         welcomeLabel.text = "Welcome, \(name ?? "User")!"
     }
     
+    // MARK: - Private Methods
     private func gradient() {
         let startColor = CGColor(
             red: 193 / 255,
