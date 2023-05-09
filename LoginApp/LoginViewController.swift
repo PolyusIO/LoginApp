@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func logInButtonPressed() {
-        if passwordTextField.text != "pass" {
+        if passwordTextField.text != "pass" || userNameTextField.text != "user" {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password"
@@ -73,6 +73,7 @@ extension LoginViewController {
 // MARK: - Keyboard
 extension LoginViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
         super.touchesBegan(touches, with: event)
     }
 }
