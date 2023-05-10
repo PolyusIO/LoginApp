@@ -22,9 +22,9 @@ class LoginViewController: UIViewController {
         if passwordTextField.text != password || userNameTextField.text != user {
             showAlert(
                 title: "Invalid login or password",
-                message: "Please, enter correct login and password"
+                message: "Please, enter correct login and password",
+                textField: passwordTextField
             )
-            passwordTextField.text = ""
             return
         }
     }
@@ -55,7 +55,7 @@ extension LoginViewController {
 
 // MARK: - Alert Controller
 extension LoginViewController {
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(
             title: title,
             message: message,
@@ -64,7 +64,9 @@ extension LoginViewController {
         let alertAction = UIAlertAction(
             title: "OK",
             style: .default
-        )
+        ) { _ in
+            textField?.text = ""
+        }
         alert.addAction(alertAction)
         present(alert, animated: true)
     }
@@ -74,7 +76,7 @@ extension LoginViewController {
 // MARK: - Keyboard
 extension LoginViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
         super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
 }
