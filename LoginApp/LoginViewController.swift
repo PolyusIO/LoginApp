@@ -30,11 +30,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotUserNameButtonPressed() {
-        showAlert(title: "Oops!", message: "Your name is user 😉")
+        showAlert(title: "Oops!", message: "Your name is \(user) 😉")
     }
     
     @IBAction func forgotPasswordButtonPressed() {
-        showAlert(title: "Oops!", message: "Your password is pass 😉")
+        showAlert(title: "Oops!", message: "Your password is \(password) 😉")
     }
 }
 
