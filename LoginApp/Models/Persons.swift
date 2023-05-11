@@ -21,7 +21,7 @@ struct User {
                     surname: "Polyakov",
                     sex: "Male",
                     age: 39,
-                    job: "Neopark",
+                    job: "Engineer",
                     hobby: "Snowboard"
                 ),
             educationProgress:
