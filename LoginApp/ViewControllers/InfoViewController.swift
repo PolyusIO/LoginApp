@@ -30,8 +30,8 @@ class InfoViewController: UIViewController {
     // MARK: - Private Methods
     private func setViewValues() {
         personImageView.layer.cornerRadius = 10
-        personImageView.image = UIImage(named: "SergeyPolyakov")
-        nameLabel.text = "Sergey"
+        personImageView.image = UIImage(named: person.photo)
+        nameLabel.text = person.name
         surnameLabel.text = person.surname
         sexLabel.text = person.sex
         ageLabel.text = person.age.formatted()
