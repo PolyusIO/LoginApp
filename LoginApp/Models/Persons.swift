@@ -19,10 +19,10 @@ struct User {
                 Person(
                     name: "Sergey",
                     surname: "Polyakov",
+                    sex: "Male",
                     age: 39,
-                    photo: "",
                     job: "Neopark",
-                    description: ""
+                    hobby: "Snowboard"
                 ),
             educationProgress:
                 [
@@ -59,11 +59,14 @@ struct User {
 struct Person {
     let name: String
     let surname: String
+    let sex: String
     let age: Int
-    let photo: String
     let job: String
-    let description: String
+    let hobby: String
     
+    var photo: String {
+        "\(name)\(surname)"
+    }
     var fullname: String {
         "\(name) \(surname)"
     }

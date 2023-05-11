@@ -14,12 +14,11 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     // MARK: - Private Properties
-    private let user = "user"
-    private let password = "pass"
+    private let user = User.getUser()
 
     // MARK: - IB Actions
     @IBAction func logInButtonPressed() {
-        if passwordTextField.text != password || userNameTextField.text != user {
+        if passwordTextField.text != user.password || userNameTextField.text != user.user {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password",
@@ -30,11 +29,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotUserNameButtonPressed() {
-        showAlert(title: "Oops!", message: "Your name is \(user) 😉")
+        showAlert(title: "Oops!", message: "Your name is \(user.user) 😉")
     }
     
     @IBAction func forgotPasswordButtonPressed() {
-        showAlert(title: "Oops!", message: "Your password is \(password) 😉")
+        showAlert(title: "Oops!", message: "Your password is \(user.password) 😉")
     }
 }
 
@@ -42,8 +41,17 @@ class LoginViewController: UIViewController {
 // MARK: - Navigation
 extension LoginViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.name = userNameTextField.text
+        guard let tabBarVC = segue.destination as? TabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        viewControllers.forEach { viewController in
+            if let welcomVC = viewController as? WelcomeViewController {
+                welcomVC.fullname = user.person.fullname
+            } else if let infoVC = viewController as? InfoViewController {
+                infoVC.person = user.person
+            } else if let lessonVC = viewController as? LessonViewController {
+                lessonVC.educationProgress = user.educationProgress
+            }
+        }
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {

@@ -9,32 +9,50 @@ import UIKit
 
 class LessonViewController: UIViewController {
 
-    let test = User.getUser()
+    // MARK: - IB Outlets
+    @IBOutlet var lessonTitleLabels: [UILabel]!
+    @IBOutlet var lessonDoneLabels: [UILabel]!
+    @IBOutlet var lessonProgressViews: [UIProgressView]!
     
+    // MARK: - Public Properties
+    var educationProgress: [Lesson]!
     
-    // MARK: - Private property
-
-    @IBOutlet var lessonTitleLabel: UILabel!
-    
-
-
-    private let lessonDoneLabel = UILabel()
-    private let lessonProgressView = UIProgressView()
-    
-    var user: User!
-    
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        switch lessonTitleLabel.tag {
-        case 0: lessonTitleLabel.text = test.educationProgress.first?.title
-        default:
-            lessonTitleLabel.text = "test"
+        setViewValues()
+        resetProgress()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setProgress()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetProgress()
+    }
+    
+    // MARK: - Private Methods
+    private func setViewValues() {
+        for i in 0...educationProgress.count - 1 {
+            lessonTitleLabels[i].text = educationProgress[i].title
+            lessonDoneLabels[i].text = educationProgress[i].description
+            lessonProgressViews[i].progress = 0
         }
     }
     
+    private func setProgress() {
+        for i in 0...educationProgress.count - 1 {
+            let value = Float(educationProgress[i].done) / Float(educationProgress[i].total)
+            lessonProgressViews[i].setProgress(value, animated: true)
+        }
+    }
     
-
-
+    private func resetProgress() {
+        for i in 0...educationProgress.count - 1 {
+            lessonProgressViews[i].progress = 0
+        }
+    }
 }
-
-

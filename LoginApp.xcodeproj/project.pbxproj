@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8BB690C52A0CD39C0023ABFC /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB690C42A0CD39C0023ABFC /* LessonViewController.swift */; };
+		8BB690C72A0D5D8B0023ABFC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB690C62A0D5D8B0023ABFC /* TabBarController.swift */; };
+		8BB690C92A0D615E0023ABFC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB690C82A0D615E0023ABFC /* InfoViewController.swift */; };
 		8BE8F48D2A0C12C50059EE50 /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8F48C2A0C12C50059EE50 /* Persons.swift */; };
 		8BFE3D4D2A0A765F008A421B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE3D4C2A0A765F008A421B /* AppDelegate.swift */; };
 		8BFE3D4F2A0A765F008A421B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE3D4E2A0A765F008A421B /* SceneDelegate.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		8BB690C42A0CD39C0023ABFC /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		8BB690C62A0D5D8B0023ABFC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8BB690C82A0D615E0023ABFC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8BE8F48C2A0C12C50059EE50 /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
 		8BFE3D492A0A765F008A421B /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFE3D4C2A0A765F008A421B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +61,9 @@
 			children = (
 				8BFE3D502A0A765F008A421B /* LoginViewController.swift */,
 				8BFE3D602A0A790A008A421B /* WelcomeViewController.swift */,
+				8BB690C82A0D615E0023ABFC /* InfoViewController.swift */,
 				8BB690C42A0CD39C0023ABFC /* LessonViewController.swift */,
+				8BB690C62A0D5D8B0023ABFC /* TabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -191,7 +197,9 @@
 				8BFE3D612A0A790A008A421B /* WelcomeViewController.swift in Sources */,
 				8BFE3D4D2A0A765F008A421B /* AppDelegate.swift in Sources */,
 				8BE8F48D2A0C12C50059EE50 /* Persons.swift in Sources */,
+				8BB690C72A0D5D8B0023ABFC /* TabBarController.swift in Sources */,
 				8BB690C52A0CD39C0023ABFC /* LessonViewController.swift in Sources */,
+				8BB690C92A0D615E0023ABFC /* InfoViewController.swift in Sources */,
 				8BFE3D4F2A0A765F008A421B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
